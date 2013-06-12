@@ -1,0 +1,80 @@
+10
+
+dir
+26
+http://192.168.2.103/svn/repos/trunk/Seguranca/src/com/vortice/seguranca
+http://192.168.2.103/svn/repos
+
+
+
+2010-01-24T19:40:48.285873Z
+26
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8e251ba4-7c92-4eb5-809b-4d33b20e3707
+
+abstracao
+dir
+
+rn
+dir
+
+ejb
+dir
+
+cliente
+dir
+
+dao
+dir
+
+vo
+dir
+
+SegurancaIf.java
+file
+
+
+
+
+2010-01-24T19:43:15.425050Z
+65ce955c5b1c9fc3cac682beb49a8c37
+2010-01-24T19:40:48.285873Z
+26
+
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+168
+

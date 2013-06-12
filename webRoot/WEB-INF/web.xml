@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app >
+ 	
+ 	<display-name>Seguranca</display-name>
+	<description>WebXml de Seguranca</description>
+	
+	<context-param>
+		<param-name>DESENV</param-name>
+		<param-value>1</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>DEBUG</param-name>
+		<param-value>1</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>INDEX_PAGE</param-name>
+		<param-value>/seguranca/index.jsf</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>LOGIN_PAGE</param-name>
+		<param-value>/login.jsf</param-value>
+	</context-param>
+    
+	<context-param>
+		<param-name>org.apache.myfaces.PRETTY_HTML</param-name>
+		<param-value>true</param-value>
+		<description>
+			Deixa o HTML gerado pelo JSF bem renderizado
+		</description>
+    </context-param>
+    
+	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>server</param-value>
+	</context-param>
+	<!-- 1.3 -->
+	<context-param>
+		<param-name>org.apache.myfaces.COMPRESS_STATE_IN_SESSION</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.apache.myfaces.SERIALIZE_STATE_IN_SESSION</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>org.apache.myfaces.CHECK_EXTENSIONS_FILTER</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<!-- 1.3 -->
+	<context-param>
+		<param-name>com.sun.faces.enableHtmlTagLibValidator</param-name>
+		<param-value>true</param-value>
+	</context-param> 
+    
+    <context-param>
+	    <param-name>org.apache.myfaces.ALLOW_JAVASCRIPT</param-name>
+	    <param-value>true</param-value>
+	    <description>
+	        This parameter tells MyFaces if javascript code should be allowed in the
+	        rendered HTML output.
+	        If javascript is allowed, command_link anchors will have javascript code
+	        that submits the corresponding form.
+	        If javascript is not allowed, the state saving info and nested parameters
+	        will be added as url parameters.
+	        Default: "true"
+	    </description>
+	</context-param>
+
+	<context-param>
+	    <param-name>org.apache.myfaces.DETECT_JAVASCRIPT</param-name>
+	    <param-value>false</param-value>
+	    <description>
+	        This parameter tells MyFaces if javascript code should be allowed in the
+	        rendered HTML output.
+	        If javascript is allowed, command_link anchors will have javascript code
+	        that submits the corresponding form.
+	        If javascript is not allowed, the state saving info and nested parameters
+	        will be added as url parameters.
+	        Default: "false"
+	        
+	        Setting this param to true should be combined with STATE_SAVING_METHOD "server" for
+	        best results.
+	        
+	        This is an EXPERIMENTAL feature. You also have to enable the detector filter/filter mapping below to get
+	        JavaScript detection working.
+	    </description>
+	</context-param>
+	
+	<context-param>
+		<param-name>org.apache.myfaces.ADD_RESOURCE_CLASS</param-name>
+		<param-value>org.apache.myfaces.component.html.util.StreamingAddResource</param-value>
+	</context-param>
+	
+	<!-- Filters -->	
+	<filter>	
+		<filter-name>extensionsFilter</filter-name>
+		<filter-class>
+			org.apache.myfaces.webapp.filter.ExtensionsFilter
+		</filter-class>
+		<init-param>
+			<param-name>uploadMaxFileSize</param-name>
+			<param-value>100m</param-value>
+			<!--description>Set the size limit for uploaded files.
+				Format: 10 - 10 bytes
+				10k - 10 KB
+				10m - 10 MB
+				1g - 1 GB</description -->
+		</init-param>
+		<init-param>
+			<param-name>uploadThresholdSize</param-name>
+			<param-value>100k</param-value>
+			<!--description>Set the threshold size - files
+				below this limit are stored in memory, files above
+				this limit are stored on disk.
+				
+				Format: 10 - 10 bytes
+				10k - 10 KB
+				10m - 10 MB
+				1g - 1 GB</description -->
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>extensionsFilter</filter-name>
+		<url-pattern>*.jsf</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>extensionsFilter</filter-name>
+		<url-pattern>/faces/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>SourceCodeServlet</servlet-name>
+		<servlet-class>org.apache.myfaces.shared_tomahawk.util.servlet.SourceCodeServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SourceCodeServlet</servlet-name>
+		<url-pattern>*.source</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+	
+	<taglib>
+		<taglib-uri>/tags/c</taglib-uri>
+		<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>/tags/fmt</taglib-uri>
+		<taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+	</taglib>
+  
+</web-app>

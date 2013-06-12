@@ -1,0 +1,113 @@
+<!-- Começo de  script do Menu -->
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+function MM_dmenu(objname) {
+  var obj = MM_findObj(objname);
+  if(obj && obj.style) obj.style.display = (obj.style.display=="none") ? "" : "none";
+}
+function MM_dmenuh() {
+  var a=MM_dmenuh.arguments;
+  for (i=0; i<a.length; i++) {var obj = MM_findObj(a[i]); if(obj && obj.style) obj.style.display = "none"; }
+}
+//-->
+</script>
+<!-- Fim do  script do Menu -->
+<style type="text/css">
+<!--
+.link {	text-decoration: none;}
+-->
+</style>
+
+	<!-- Inicio Itens do menu Seguranca -->
+	<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+		<a href="javascript://" class="link" 
+			onClick="MM_dmenuh('sair'); MM_dmenu('seguranca');"><b>Segurança</b></a><br>
+	</font> 
+	<div id="seguranca" style="display:none"> 
+	  <table width="170" border="0" cellpadding="0" cellspacing="3" bgcolor="#C1D3E6">
+		<tr> 
+		  <td><img src="images/shimpreto.gif" width="100%" height="1"></td>
+		</tr>
+		<tr> 
+		  <td>
+		  	<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+		  		<strong>&raquo;</strong><a href="linkConsulta.jsf" class="link">Link</a>
+		  	</font>
+		  </td>
+		</tr>
+		<tr> 
+		  <td>
+		  	<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+		  		<strong>&raquo;</strong><a href="perfilConsulta.jsf" class="link">Perfil</a>
+		  	</font>
+		  </td>
+		</tr>
+		<tr> 
+		  <td>
+		  	<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+		  		<strong>&raquo;</strong><a href="funcaoConsulta.jsf" class="link">Função</a>
+		  	</font>
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		  	<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+		  		<strong>&raquo;</strong><a href="funcionalidadeConsulta.jsf" class="link">Funcionalidade</a>
+		  	</font>
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		  	<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+		  		<strong>&raquo;</strong><a href="usuarioConsulta.jsf" class="link">Usuário</a>
+		  	</font>
+		  </td>
+		</tr>
+		<tr> 
+		  <td><img src="images/shimpreto.gif" width="100%" height="1"></td>
+		</tr>
+	  </table>
+	</div>
+	<!-- Fim Itens do menu Seguranca -->
+	<!-- Inicio Itens do menu Contrato
+	<font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="javascript://" class="link" onClick="MM_dmenuh('usuario','estoque', 'consulta', 'inventario','material','pedidos','precos','afm','sair'); MM_dmenu('contrato');"><b>CONTRATO</b></a><br>
+	</font> 
+	<div id="contrato" style="display:none"> 
+	  <table width="170" border="0" cellpadding="0" cellspacing="3" bgcolor="#C1D3E6">
+		<tr> 
+		  <td ><img src="images/shimpreto.gif" width="100%" height="1"></td>
+		</tr>
+		<tr> 
+		  <td width="149" ><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><strong>&raquo;</strong><a href="contrato.php?action=add" class="link">Adicionar Contrato</a></font></td>
+		</tr>
+		<tr> 
+		  <td width="149" ><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><strong>&raquo;</strong><a href="contrato.php?action=list" class="link">Listar Contrato</a></font></td>
+		</tr>
+		<tr> 
+		  <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><strong>&raquo;</strong><a href="consumo.php?action=aditivar_contrato" class="link">Oficio para Aditivar Contrato</a></font></td>
+		</tr>
+		<tr> 
+		  <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><strong>&raquo;</strong><a href="consumo.php?action=termo_aditivo" class="link">Termo Aditivo</a></font></td>
+		</tr>
+		<tr>
+		  <td ><img src="images/shimpreto.gif" width="100%" height="1"></td>
+		</tr>
+	  </table>
+	</div>
+	Fim Itens do menu Contrato-->
+	
+	<font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="logout.jsf" class="link"><b>SAIR</b></a><br>
+	</font>
+	<table width="170" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+		<td>&nbsp;</td>
+	  </tr>
+	</table>
+	<font size="2" face="Verdana, Arial, Helvetica, sans-serif"> </font>		

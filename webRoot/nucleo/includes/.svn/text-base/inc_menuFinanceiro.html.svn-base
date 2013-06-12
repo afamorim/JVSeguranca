@@ -1,0 +1,115 @@
+<script type="text/JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_changeProp(objName,x,theProp,theValue) { //v6.0
+  var obj = MM_findObj(objName);
+  if (obj && (theProp.indexOf("style.")==-1 || obj.style)){
+    if (theValue == true || theValue == false)
+      eval("obj."+theProp+"="+theValue);
+    else eval("obj."+theProp+"='"+theValue+"'");
+  }
+}
+//-->
+</script>
+	<div id="menu">
+		<div id="menu_adm1">
+			<a href="javascript:void(0)" class="divisoria" onfocus="MM_changeProp('menu_adm2','','style.display','inline','DIV'); MM_changeProp('menu_adm1','','style.display','none','DIV'); MM_changeProp('submenu1','','style.display','inline','DIV'); MM_changeProp('menu_financ2','','style.display','none','DIV'); MM_changeProp('submenu2','','style.display','none','DIV'); MM_changeProp('menu_financ1','','style.display','inline','DIV')">Adm. do Sistema</a>
+		</div>
+		<div id="menu_adm2">
+			<a href="javascript:void(0)" class="divisoria" onfocus="MM_changeProp('menu_adm1','','style.display','inline','DIV'); MM_changeProp('submenu1','','style.display','none','DIV'); MM_changeProp('menu_adm2','','style.display','none','DIV')">Adm. do Sistema</a>
+		</div>
+		<div id="submenu1">
+			<div><a class="submenu" href="#">Grupos</a></div>
+			<div><a class="submenu" href="#">Usuários</a></div>
+			<div><a class="submenu" href="#">Alterar senha</a></div>
+		</div>
+		
+		<br /><br />
+		<span>Módulos</span>
+		<br /><br />
+		
+		<div id="menu_financ1">
+			<a href="javascript:void(0)" class="divisoria" onfocus="MM_changeProp('menu_financ2','','style.display','inline','DIV'); MM_changeProp('menu_financ1','','style.display','none','DIV'); MM_changeProp('submenu2','','style.display','inline','DIV'); MM_changeProp('menu_adm2','','style.display','none','DIV'); MM_changeProp('submenu1','','style.display','none','DIV'); MM_changeProp('menu_adm1','','style.display','inline','DIV')">Financeiro</a>
+		</div>
+		<div id="menu_financ2">
+			<a href="javascript:void(0)" class="divisoria" onfocus="MM_changeProp('menu_financ1','','style.display','inline','DIV'); MM_changeProp('submenu2','','style.display','none','DIV'); MM_changeProp('menu_financ2','','style.display','none','DIV')">Financeiro</a>
+		</div>
+		<div id="submenu2">
+			<div><a class="submenu" href="financeiro_lst_banco.php">Bancos</a></div>
+			<div><a class="submenu" href="financeiro_lst_conta.php">Contas</a></div>
+			<div><a class="submenu" href="#financeiro_">Tipos de Lançamentos</a></div>
+			<div><a class="submenu" href="#financeiro_">Origem de Lançamentos</a></div>
+			<div><a class="submenu" href="#financeiro_">Extratos</a></div>
+			<div><a class="submenu" href="#financeiro_">Saldos</a></div>
+			<div><a class="submenu" href="financeiro_lst_lancamento.php">Consultar Lançamentos</a></div>
+			<div><a class="submenu" href="financeiro_cad_lancamento.php">Efetuar Lançamento</a></div>
+		</div>
+		<!--
+		<div id="fl-um">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="fl-dois">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="fl">
+			<div><a href="#">Downloads</a></div>
+			<div><a href="#">Tutoriais</a></div>
+			<div><a href="#">Desafios</a></div>
+		</div>
+		<div id="cf-um">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="cf-dois">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="cf">
+			<div><a href="#">Downloads</a></div>
+			<div><a href="#">Tutoriais</a></div>
+		</div>
+		<div id="fh-um">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="fh-dois">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="fh">
+			<div><a href="#">Downloads</a></div>
+			<div><a href="#">Tutoriais</a></div>
+		</div>
+		<div id="cont-um">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="cont-dois">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="cont">
+			<div><a href="#">Colunistas</a></div>
+			<div><a href="#">Cursos Online</a></div>
+			<div><a href="#">Artigos</a></div>
+			<div><a href="#">Galeria MXStudio</a></div>
+		</div>
+		<div id="int-um">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="int-dois">
+			<a href="javascript:void(0)" class="divisoria"></a>
+		</div>
+		<div id="int">
+			<div><a href="#">Agenda de Eventos</a></div>
+			<div><a href="#">Colabore</a></div>
+			<div><a href="#">Diversos</a></div>
+			<div><a href="#">Entrevistas</a></div>
+			<div><a href="#">Expediente</a></div>
+			<div><a href="#">Fale Conosco</a></div>
+			<div><a href="#">Parceiros</a></div>
+			<div><a href="#">Sala de Imprensa</a></div>
+		</div>
+		-->
+	</div>

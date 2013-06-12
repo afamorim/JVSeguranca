@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                              "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+	<managed-bean>
+		<managed-bean-name>UsuarioBean</managed-bean-name>
+		<managed-bean-class>com.vortice.seguranca.cliente.bean.UsuarioBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>LinkBean</managed-bean-name>
+		<managed-bean-class>com.vortice.seguranca.cliente.bean.LinkBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>FuncaoBean</managed-bean-name>
+		<managed-bean-class>com.vortice.seguranca.cliente.bean.FuncaoBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>FuncionalidadeBean</managed-bean-name>
+		<managed-bean-class>com.vortice.seguranca.cliente.bean.FuncionalidadeBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>PerfilBean</managed-bean-name>
+		<managed-bean-class>com.vortice.seguranca.cliente.bean.PerfilBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<!-- LINK -->
+	<navigation-rule>
+		<description>Navegacao do Popup de Link.</description>
+		<from-view-id>/seguranca/linkPopup.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.consultar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkPopup.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.consultar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/linkPopup.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.salvar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkPopup.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.salvar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/linkPopup.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.reset}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkPopup.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<description>Navegacao da Consulta de Link.</description>
+		<from-view-id>/seguranca/linkConsulta.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.consultar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.consultar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/linkConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.remover}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.remover}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/linkConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.carregar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkForm.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.carregar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/linkConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.reset}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkForm.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<description>Navegacao do Formulario de Link.</description>
+		<from-view-id>/seguranca/linkForm.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.salvar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkConsulta.jsp</to-view-id>
+		</navigation-case>
+	
+		<navigation-case>
+			<from-action>#{LinkBean.salvar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/linkForm.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{LinkBean.reset}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/linkConsulta.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- LINK -->
+	
+	<!-- FUNCAO -->
+	<navigation-rule>
+		<description>Navegacao do Formulario de Funcao.</description>
+		<from-view-id>/seguranca/funcaoForm.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{FuncaoBean.salvar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcaoConsulta.jsp</to-view-id>
+		</navigation-case>
+	
+		<navigation-case>
+			<from-action>#{FuncaoBean.salvar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcaoForm.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<description>Navegacao da Consulta de Funcao.</description>
+		<from-view-id>/seguranca/funcaoConsulta.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{FuncaoBean.consultar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcaoConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncaoBean.consultar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcaoConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncaoBean.remover}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcaoConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncaoBean.remover}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcaoConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncaoBean.carregar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcaoForm.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncaoBean.carregar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcaoConsulta.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- FUNCAO -->
+	
+	<!-- FUNCIONALIDADE -->
+	<navigation-rule>
+		<description>Navegacao do Formulario de Funcionalidade.</description>
+		<from-view-id>/seguranca/funcionalidadeForm.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.salvar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeConsulta.jsp</to-view-id>
+		</navigation-case>
+	
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.salvar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeForm.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<description>Navegacao da Consulta de Funcionalidade.</description>
+		<from-view-id>/seguranca/funcionalidadeConsulta.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.consultar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.consultar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.remover}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.remover}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.carregar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeForm.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{FuncionalidadeBean.carregar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/funcionalidadeConsulta.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- FUNCIONALIDADE -->
+	
+	<!-- PERFIL -->
+	<navigation-rule>
+		<description>Navegacao do Formulario de Perfil.</description>
+		<from-view-id>/seguranca/perfilForm.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{PerfilBean.salvar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/perfilConsulta.jsp</to-view-id>
+		</navigation-case>
+	
+		<navigation-case>
+			<from-action>#{PerfilBean.salvar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/perfilConsulta.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<description>Navegacao da Consulta de Perfil.</description>
+		<from-view-id>/seguranca/perfilConsulta.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{PerfilBean.consultar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/perfilConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{PerfilBean.consultar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/perfilConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{PerfilBean.remover}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/perfilConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{PerfilBean.remover}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/perfilConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{PerfilBean.carregar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/perfilForm.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{PerfilBean.carregar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/perfilConsulta.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- PERFIL -->
+	
+	<!-- USUARIO -->
+	<navigation-rule>
+		<description>Navegacao do Formulario de Login.</description>
+		<from-view-id>/seguranca/login.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.logar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/index.jsp</to-view-id>
+		</navigation-case>
+	
+		<navigation-case>
+			<from-action>#{UsuarioBean.logar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<description>Navegacao do Formulario de Usuario.</description>
+		<from-view-id>/seguranca/usuarioForm.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.salvar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/usuarioConsulta.jsp</to-view-id>
+		</navigation-case>
+	
+		<navigation-case>
+			<from-action>#{UsuarioBean.salvar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/usuarioConsulta.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<description>Navegacao da Consulta de Usuario.</description>
+		<from-view-id>/seguranca/usuarioConsulta.jsp</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.consultar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/usuarioConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.consultar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/usuarioConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.remover}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/usuarioConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.remover}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/usuarioConsulta.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.carregar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/seguranca/usuarioForm.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{UsuarioBean.carregar}</from-action>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/seguranca/usuarioConsulta.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- USUARIO -->
+	
+	<render-kit>
+		<renderer>
+			<component-family>javax.faces.Command</component-family>
+			<renderer-type>javax.faces.Button</renderer-type>
+			<renderer-class>org.apache.myfaces.renderkit.html.jsf.ExtendedHtmlButtonRenderer</renderer-class>
+		</renderer>
+		
+		<renderer>
+			<component-family>javax.faces.Command</component-family>
+			<renderer-type>javax.faces.Link</renderer-type>
+			<renderer-class>org.apache.myfaces.renderkit.html.jsf.ExtendedHtmlLinkRenderer</renderer-class>
+		</renderer>
+	</render-kit>
+	
+	<application>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+			<supported-locale>pt_BR</supported-locale>
+		</locale-config>
+		<message-bundle>CustomMessages</message-bundle>
+	</application>
+	
+	<lifecycle/>
+ 	
+	<factory/>
+</faces-config>

@@ -1,0 +1,13 @@
+<application>
+	<display-name>Sistema de Segurança</display-name>
+	<description>Application description</description>
+	<module>
+		<web>
+			<web-uri>segurancaWAR.war</web-uri>
+			<context-root>seguranca</context-root>
+		</web>
+	</module>
+	<module>
+		<ejb>segurancaEJB.jar</ejb>
+	</module>
+</application>
